@@ -1,0 +1,4 @@
+SANITY_VERSION 1
+TMPDIR /home/vboxuser/project_image/build/tmp
+SSTATE_DIR /home/vboxuser/project_image/build/sstate-cache
+NATIVELSBSTRING ubuntu-22.04

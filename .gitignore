@@ -1,0 +1,25 @@
+poky/
+meta-raspberrypi/
+meta-openembedded/
+meta-tensorflow-lite
+build/tmp/
+build/downloads/
+build/sstate-cache/
+build/tmp-glibc/
+
+build/conf/sanity_info
+build/conf/templateconf.cfg
+# Build logs and temporary output
+*.log
+*.tmp
+*.bak
+
+# Local editor/project files
+.vscode/
+.idea/
+*.swp
+*~
+
+# Common OS artifacts
+.DS_Store
+.thumbs.db
