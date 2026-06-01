@@ -23,3 +23,5 @@ build/conf/templateconf.cfg
 # Common OS artifacts
 .DS_Store
 .thumbs.db
+build/bitbake.lock
+build/cache/
