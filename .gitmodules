@@ -1,0 +1,3 @@
+[submodule "meta-vibration/recipes-vibration/vibration-monitor/files"]
+	path = meta-vibration/recipes-vibration/vibration-monitor/files
+	url = git@github.com:A-Gad/data_acquistion_test.git

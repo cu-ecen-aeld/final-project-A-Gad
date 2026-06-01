@@ -37,7 +37,9 @@ IMAGE_INSTALL += " \
     iproute2 \
     dhcpcd \
     libnl \
+    libgpiod \
 "
+
 IMAGE_FEATURES += " \
     ssh-server-openssh \
     debug-tweaks \
