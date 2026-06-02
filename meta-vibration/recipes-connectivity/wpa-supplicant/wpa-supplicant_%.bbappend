@@ -8,7 +8,7 @@ PACKAGECONFIG:append = " libnl"
 RDEPENDS:${PN} += "libnl libnl-genl libnl-route"
 
 do_install:append() {
-    install -d ${D}${sysconfdir}/wpa_supplicant/
+    install -d ${D}${sysconfdir}
     install -m 0600 ${WORKDIR}/wpa_supplicant.conf \
-        ${D}${sysconfdir}/wpa_supplicant/wpa_supplicant-wlan0.conf
+        ${D}${sysconfdir}/wpa_supplicant-wlan0.conf
 }
