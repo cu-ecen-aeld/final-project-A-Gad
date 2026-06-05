@@ -20,36 +20,27 @@ IMAGE_INSTALL += " \
     sqlite3 \
     python3-sqlite3 \
     wpa-supplicant \
-    linux-firmware-rpidistro-bcm43455 \
     iproute2 \
     dhcpcd \
     gdb \
     strace \
     nano \
-"
-IMAGE_INSTALL += " \
-    gdb \
-    strace \
-    nano \
-"
-IMAGE_INSTALL += " \
-    linux-firmware-rpidistro-bcm43455 \
-    iproute2 \
-    dhcpcd \
     libnl \
     libgpiod \
+    vibration-monitor \
+    linux-firmware-rpidistro-bcm43455 \
 "
-
 IMAGE_FEATURES += " \
     ssh-server-openssh \
     debug-tweaks \
 "
+IMAGE_INSTALL:append = " vibration-monitor"
 
 inherit extrausers
 
 EXTRA_USERS_PARAMS = "usermod -p '$6$xyz$.LA3IZQhaac9mspnV.DIfjpr01DdnIo7C1p/Jb0Zv.4Oth1vnM3NBYGNLpn.NCBQe6P7nipTrkWldQgIYfPiH/' root;"
 
-ROOTFS_POSTPROCESS_COMMAND += "allow_root_ssh_login;"
+ROOTFS_POSTPROCESS_COMMAND += "allow_root_ssh_login; setup_wifi; "
 allow_root_ssh_login() {
     sed -i 's/^#PermitRootLogin.*/PermitRootLogin yes/' \
         ${IMAGE_ROOTFS}/etc/ssh/sshd_config
@@ -57,8 +48,6 @@ allow_root_ssh_login() {
         ${IMAGE_ROOTFS}/etc/ssh/sshd_config
 }
 
-
-ROOTFS_POSTPROCESS_COMMAND += "setup_wifi;"
 
 setup_wifi() {
     # create wpa_supplicant init script
