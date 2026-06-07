@@ -29,6 +29,8 @@ IMAGE_INSTALL += " \
     libgpiod \
     vibration-monitor \
     linux-firmware-rpidistro-bcm43455 \
+    libtensorflow-lite \
+    python3-tensorflow-lite \
 "
 IMAGE_FEATURES += " \
     ssh-server-openssh \
@@ -38,7 +40,7 @@ IMAGE_INSTALL:append = " vibration-monitor"
 
 inherit extrausers
 
-EXTRA_USERS_PARAMS = "usermod -p '$6$xyz$.LA3IZQhaac9mspnV.DIfjpr01DdnIo7C1p/Jb0Zv.4Oth1vnM3NBYGNLpn.NCBQe6P7nipTrkWldQgIYfPiH/' root;"
+EXTRA_USERS_PARAMS = "usermod -p '\$6\$xyz\$.LA3IZQhaac9mspnV.DIfjpr01DdnIo7C1p/Jb0Zv.4Oth1vnM3NBYGNLpn.NCBQe6P7nipTrkWldQgIYfPiH/' root;"
 
 ROOTFS_POSTPROCESS_COMMAND += "allow_root_ssh_login; setup_wifi; "
 allow_root_ssh_login() {
